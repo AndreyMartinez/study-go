@@ -6,10 +6,6 @@ func printFunctionTest(number int) {
 	fmt.Println(number)
 }
 
-func listNumberFunction(beforeNumber, afterNumber int, message string) {
-	fmt.Println()
-}
-
 func myWalletMonth(salary, dayMonth, socialSecurity int) (int, int) {
 	securitySocial := salary - socialSecurity
 	salaryDay := securitySocial / dayMonth
@@ -32,10 +28,17 @@ func main() {
 	salaryDaySecond, securitySocial := myWalletMonth(1000000, 28, 500000)
 	fmt.Printf("%v my day salary and \n  my final sallary %v \n", salaryDaySecond, securitySocial)
 	counter := 0
-	//For testing
+	//For testing and break or continue
 	for counter < 15 {
+		if counter == 2 {
+			fmt.Println("number two continue")
+			counter++
+			continue
+		} else if counter == 13 {
+			fmt.Println("Number 13 break")
+			break
+		}
 		printFunctionTest(counter)
-		listNumberFunction(counter-1, counter+1, "Final name ")
 		counter++
 	}
 	//switch syntax
